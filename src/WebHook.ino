@@ -1,18 +1,18 @@
-/*
- * Project WebHook
- * Description:
- * Author:
- * Date:
- */
+int led = D7; // The on-board LED
 
-// setup() runs once, when the device is first turned on.
-void setup() {
-  // Put initialization like pinMode and begin functions here.
-
+void setup()
+{
+  pinMode(led, OUTPUT);
 }
 
-// loop() runs over and over again, as quickly as it can execute.
-void loop() {
-  // The core of your code will likely live here.
+void loop()
+{
+  digitalWrite(led, HIGH); // Turn ON the LED
 
+  String temp = String(random(60, 80));
+  Particle.publish("temp", temp, PRIVATE);
+  delay(30000); // Wait for 30 seconds
+
+  digitalWrite(led, LOW); // Turn OFF the LED
+  delay(30000);           // Wait for 30 seconds
 }
