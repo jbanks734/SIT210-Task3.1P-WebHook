@@ -19,7 +19,7 @@ void setup()
 
 void loop()
 {
-  delay(10000);
+  delay(30000);
 
   float t = dht.getTempCelcius();
 
@@ -28,13 +28,14 @@ void loop()
 
   String temp = String(t);
 
-  // if ( != 0 )
-  // {
-  //   // action A
-  // }
-  // else
-  // {
-  //   // action B
-  // }
-  Particle.publish("temp", temp, PRIVATE);
+  if (t != t)
+  {
+    // action A
+    Serial.println("nan");
+  }
+  else
+  {
+    // action B
+    Particle.publish("temp", temp, PRIVATE);
+  }
 }
