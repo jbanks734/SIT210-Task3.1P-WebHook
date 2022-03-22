@@ -28,12 +28,13 @@ void loop()
 
   String temp = String(t);
 
-  if (temp == "nan")
-  {
-    Particle.publish("temp", temp, PRIVATE);
-  }
-  else
-  {
-    Serial.println("nan");
-  }
+  // if ( != 0 )
+  // {
+  //   // action A
+  // }
+  // else
+  // {
+  //   // action B
+  // }
+  Particle.publish("temp", temp, PRIVATE);
 }
